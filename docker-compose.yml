@@ -15,4 +15,11 @@ services:
     volumes:
      - .:/starter
      - /starter/node_modules
+  nginx:
+    build:
+      context: ./nginx
+    depends_on:
+      - "web"
+    ports:
+      - "80:80"
      
